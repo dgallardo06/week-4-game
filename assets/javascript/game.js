@@ -26,9 +26,28 @@ $( document ).ready(function() {
 	//Player clicks on a crystal, number is added to score and revealed
 
 	$("#ruby").click(function(){
-		totalScore = 
+		totalScore = rubyNum + totalScore;
+		console.log(totalScore);
+		$("#totalScore").text(totalScore);
 	});
 
+	$("#diamond").click(function(){
+		totalScore = diamondNum + totalScore;
+		console.log(totalScore);
+		$("#totalScore").text(totalScore);
+	});
+
+	$("#yellow").click(function(){
+		totalScore = yellowNum + totalScore;
+		console.log(totalScore);
+		$("#totalScore").text(totalScore);
+	});
+
+	$("#emerald").click(function(){
+		totalScore = emeraldNum + totalScore;
+		console.log(totalScore);
+		$("#totalScore").text(totalScore);
+	});
 	//If score equals the random number, the player wins. Wins increases by one and game resets
 
 	//If score is less than the random number, keep playing
