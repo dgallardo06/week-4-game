@@ -11,7 +11,7 @@ $( document ).ready(function() {
 		randNum = Math.floor(Math.random() * (120-19)+19);
 		console.log(randNum);
 		$("#randNum").text(randNum);
-		$("#button").remove();
+		$("#button").hide();
 
 	});
 
@@ -29,24 +29,28 @@ $( document ).ready(function() {
 		totalScore = rubyNum + totalScore;
 		console.log(totalScore);
 		$("#totalScore").text(totalScore);
+		$("#ruby").replaceWith("<h2>" + rubyNum + "</h2");
 	});
 
 	$("#diamond").click(function(){
 		totalScore = diamondNum + totalScore;
 		console.log(totalScore);
 		$("#totalScore").text(totalScore);
+		$("#diamond").replaceWith("<h2>" + diamondNum + "</h2");
 	});
 
 	$("#yellow").click(function(){
 		totalScore = yellowNum + totalScore;
 		console.log(totalScore);
 		$("#totalScore").text(totalScore);
+		$("#yellow").replaceWith("<h2>" + yellowNum + "</h2");
 	});
 
 	$("#emerald").click(function(){
 		totalScore = emeraldNum + totalScore;
 		console.log(totalScore);
 		$("#totalScore").text(totalScore);
+		$("#emerald").replaceWith("<h2>" + emeraldNum + "</h2");
 	});
 	//If score equals the random number, the player wins. Wins increases by one and game resets
 
