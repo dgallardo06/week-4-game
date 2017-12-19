@@ -2,26 +2,29 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Crystals Collector</title>
+    <title>Pokémon Badge Collector</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
   </head>
   <body>
     
     <header>
-      <h1>Crystals Collector</h1>
+      <h1>Pokémon Badge Collector</h1>
     </header>
 
 <!-- section for instructions-->  
     <div>
       <p>You will be given a random number at the start of the game.</p>
-      <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+      <p>There are four Pokémon badges below. By clicking on a badge you will add a specific amount of points to your total score.</p>
       <p>You win the game by matching your total score to a random number, you lost the game if your total score goes above the random number.</p>
-      <p>The value of each crystal is hidden from you until you click on it.</p>
-      <p>Each time when the game starts, the game will change the values of each crystal.</p>
+      <p>The value of each badge is hidden from you until you click on it.</p>
+      <p>Each time when the game starts, the game will change the values of each badge.</p>
     </div>
+
+    ---------------------------------------
 
 <!-- section for random number-->
     <div>
@@ -30,32 +33,31 @@
     </div>
 
 <!-- section for wins and losses-->
-    <div>
+    <div class="scoreCounts">
 
-      <div>Wins: 
+      <div class="winDiv">Wins 
         <div id="wins">0</div>
       </div>
 
-      <div>Losses: 
+      <div class="loseDiv">Losses 
         <div id="losses">0</div>
       </div>
     </div>
 
 <!-- section for crystals-->
-    <div>
-      <img id="ruby" src="assets/images/ruby.png" alt="ruby">
-      <img id="diamond" src="assets/images/diamond.png" alt="diamond">
-      <img id="yellow"src="assets/images/yellowGem.png" alt="yellow gem">
-      <img id="emerald" src="assets/images/emerald.png" alt="emerald">
+    <div class="images">
+      <img id="ruby" src="assets/images/volcanoBadge.png" alt="Volcano Badge">
+      <img id="diamond" src="assets/images/cascadeBadge.png" alt="Cascade Badge">
+      <img id="yellow" src="assets/images/thunderBadge.png" alt="Thunder Badge">
+      <img id="emerald" src="assets/images/earthBadge.png" alt="Earth Badge">
     </div>
 
  <!-- section for total score is-->
-    <div>
+    <div class="totalTracker">
       <p>Your total score is:</p>
-    </div>
+      <div id="totalScore">0</div>
+  </div> 
 
- <!-- section for total score-->   
-    <div id="totalScore">0</div>
 
 
 
