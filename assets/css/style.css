@@ -1,13 +1,53 @@
+body {
+	background-image: url(../images/pokemonBackground.jpg);
+	background-size: cover;
+	color: white;
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+	text-align: center;
+}
+h1 {
+	font-size: 70px;
+}
+
 img {
-	width: 10%;
+	width: 15%;
 	height: auto;
 }
 
-#emerald {
-	width: 7%;
-	height: auto;
+p {
+	margin: 1.5%;
 }
 
-div {
-	margin: 5px;
+button {
+	font-size: 25px;
+	border-radius: 3px;
+	font-family: 'VT323', monospace;
+	border: solid gray 3px;
+	background-color: white;
+}
+
+.scoreCounts{
+	padding-left: 41%;
+}
+.winDiv, .loseDiv {
+	float: left;
+	font-size: 40px;
+	margin: 25px;
+}
+
+#wins {
+	color: green;
+}
+
+#losses {
+	color: red;
+}
+
+.images {
+	clear: both;
+}
+
+.totalTracker {
+	font-size: 40px;
 }
