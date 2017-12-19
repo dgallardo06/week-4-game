@@ -7,12 +7,6 @@ $( document ).ready(function() {
 	//Generate a random number between 19-120
 	var randNum = Math.floor(Math.random() * (120-19)+19);
 
-	//on click of a button, random number will be displayed
-	$( "#button" ).click(function() {
-		$("#randNum").html("<div>" + randNum + "</div>");
-		$("#button").hide();
-	});
-
 	//Generate a random number for each crystal between 1-12
 	var rubyNum = Math.floor(Math.random() * (12-1)+1);
 	var diamondNum = Math.floor(Math.random() * (12-1)+1);
@@ -21,7 +15,13 @@ $( document ).ready(function() {
 
 	console.log(rubyNum, diamondNum, yellowNum, emeraldNum);
 
-	//Player clicks on a crystal, number is added to score and revealed
+	//on click of a button, random number will be displayed
+	$( "#button" ).click(function() {
+		$("#randNum").html("<div>" + randNum + "</div>");
+		$("#button").hide();
+	});
+
+	//Player clicks on a crystal, number is added to score
 
 	$("#ruby").click(function(){
 		totalScoreUpdate(rubyNum);
@@ -41,7 +41,6 @@ $( document ).ready(function() {
 
 
 	//If score equals the random number, the player wins. Wins increases by one and game resets
-	//If score is less than the random number, keep playing
 	//If score is more than the random number, player looses. Losses increases by one and game resets.
 	if (randNum === totalScore){
 		console.log("is this fucking working");
