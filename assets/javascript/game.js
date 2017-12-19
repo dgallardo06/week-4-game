@@ -1,18 +1,16 @@
 $( document ).ready(function() {
 
-	var randNum = "";
 	var wins = 0;
 	var losses = 0;
 	var totalScore = 0;
 
+	//Generate a random number between 19-120
+	var randNum = Math.floor(Math.random() * (120-19)+19);
 
-	//Generate a random number between 19-120 on click of a button
+	//on click of a button, random number will be displayed
 	$( "#button" ).click(function() {
-		randNum = Math.floor(Math.random() * (120-19)+19);
-		console.log(randNum);
-		$("#randNum").text(randNum);
+		$("#randNum").html("<div>" + randNum + "</div>");
 		$("#button").hide();
-
 	});
 
 	//Generate a random number for each crystal between 1-12
@@ -26,37 +24,47 @@ $( document ).ready(function() {
 	//Player clicks on a crystal, number is added to score and revealed
 
 	$("#ruby").click(function(){
-		totalScore = rubyNum + totalScore;
-		console.log(totalScore);
-		$("#totalScore").text(totalScore);
-		$("#ruby").replaceWith("<h2>" + rubyNum + "</h2");
+		totalScoreUpdate(rubyNum);
 	});
 
 	$("#diamond").click(function(){
-		totalScore = diamondNum + totalScore;
-		console.log(totalScore);
-		$("#totalScore").text(totalScore);
-		$("#diamond").replaceWith("<h2>" + diamondNum + "</h2");
+		totalScoreUpdate(diamondNum);
 	});
 
 	$("#yellow").click(function(){
-		totalScore = yellowNum + totalScore;
-		console.log(totalScore);
-		$("#totalScore").text(totalScore);
-		$("#yellow").replaceWith("<h2>" + yellowNum + "</h2");
+		totalScoreUpdate(yellowNum);
 	});
 
 	$("#emerald").click(function(){
-		totalScore = emeraldNum + totalScore;
-		console.log(totalScore);
-		$("#totalScore").text(totalScore);
-		$("#emerald").replaceWith("<h2>" + emeraldNum + "</h2");
+		totalScoreUpdate(emeraldNum);
 	});
+
+
 	//If score equals the random number, the player wins. Wins increases by one and game resets
-
 	//If score is less than the random number, keep playing
-
 	//If score is more than the random number, player looses. Losses increases by one and game resets.
+	if (randNum === totalScore){
+		console.log("is this fucking working");
+		wins++;
+		$("#wins").html("<div>" + wins + "</div>");
+		reset();
+	} else if (totalScore > randNum){
+		losses++;
+		$("#losses").html("<div>" + losses + "</div>");
+		reset();
+	}
+
+
+	//*********************Functions*******************************
+	function totalScoreUpdate(crystalNum){
+		totalScore = crystalNum + totalScore;
+		$("#totalScore").html("<div>" + totalScore + "</div");
+	}
+
+	function reset(){
+		totalScore = 0;
+		$("#button").show();
+	}
 
 
 
