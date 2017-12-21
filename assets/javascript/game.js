@@ -8,12 +8,12 @@ $( document ).ready(function() {
 	var randNum = Math.floor(Math.random() * (120-19)+19);
 
 	//Generate a random number for each crystal between 1-12
+	var emeraldNum = Math.floor(Math.random() * (12-1)+1);
 	var rubyNum = Math.floor(Math.random() * (12-1)+1);
 	var diamondNum = Math.floor(Math.random() * (12-1)+1);
 	var yellowNum = Math.floor(Math.random() * (12-1)+1);
-	var emeraldNum = Math.floor(Math.random() * (12-1)+1);
 
-	console.log(rubyNum, diamondNum, yellowNum, emeraldNum);
+	console.log(emeraldNum, rubyNum, diamondNum, yellowNum);
 
 	//on click of a button, random number will be displayed
 	$( "#button" ).click(function() {
@@ -39,29 +39,30 @@ $( document ).ready(function() {
 		totalScoreUpdate(emeraldNum);
 	});
 
-
-	//If score equals the random number, the player wins. Wins increases by one and game resets
-	//If score is more than the random number, player looses. Losses increases by one and game resets.
-	if (randNum === totalScore){
-		console.log("is this fucking working");
-		wins++;
-		$("#wins").html("<div>" + wins + "</div>");
-		reset();
-	} else if (totalScore > randNum){
-		losses++;
-		$("#losses").html("<div>" + losses + "</div>");
-		reset();
-	}
-
-
 	//*********************Functions*******************************
 	function totalScoreUpdate(crystalNum){
 		totalScore = crystalNum + totalScore;
 		$("#totalScore").html("<div>" + totalScore + "</div");
+
+		//If score equals the random number, the player wins. Wins increases by one and game resets
+		//If score is more than the random number, player looses. Losses increases by one and game resets.
+
+		if (randNum === totalScore){
+			wins++;
+			$("#wins").html("<div>" + wins + "</div>");
+			reset();
+		} else if (totalScore > randNum){
+			losses++;
+			$("#losses").html("<div>" + losses + "</div>");
+			reset();
+		}
+
 	}
 
+	//Total score is reset. Button shows up again. New numbers are generated
 	function reset(){
 		totalScore = 0;
+		$("#totalScore").html("<div>" + totalScore + "</div");
 		$("#button").show();
 	}
 
